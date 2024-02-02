@@ -31,3 +31,8 @@ form {
   flex-direction: column;
   align-items: center;
 }
+
+fieldset > div {
+  display: flex;
+}
+

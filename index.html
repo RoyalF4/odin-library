@@ -16,7 +16,7 @@
                 <th>Title</th>
                 <th>Author</th>
                 <th>Pages</th>
-                <th>Finished</th>
+                <th>Read</th>
             </tr>
         </thead>
         <tbody>
@@ -39,8 +39,15 @@
                 <input type="text" name="pages" required>
             </div>
             <div>
-                <label for="read">Read</label>
-                <input type="text" name="read" required>
+                <fieldset>
+                    <legend>Have read:</legend>
+                    <div>
+                        <label for="no-radio">Yes</label>
+                        <input type="radio" name="read" value="Yes" required>
+                        <label for="yes-radio">No</label>
+                        <input type="radio" name="read" value="No" required>
+                    </div>
+                </fieldset>
             </div>
             <button type="submit" id="close-modal">Add</button>
         </form>
