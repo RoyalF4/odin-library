@@ -36,3 +36,11 @@ fieldset > div {
   display: flex;
 }
 
+.toggle {
+  margin: 0 0 0 10px;
+}
+
+.empty-cell {
+  text-decoration: none;
+  background-color: black;
+}

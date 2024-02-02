@@ -17,6 +17,7 @@
                 <th>Author</th>
                 <th>Pages</th>
                 <th>Read</th>
+                <th class="empty-cell">&nbsp</th>
             </tr>
         </thead>
         <tbody>
@@ -28,24 +29,24 @@
         <form action="">
             <div>
                 <label for="title">Title</label>
-                <input type="text" name="title" required>
+                <input type="text" id="title" name="title" required>
             </div>
             <div>
                 <label for="author">Author</label>
-                <input type="text" name="author" required>
+                <input type="text" id="author" name="author" required>
             </div>
             <div>
                 <label for="pages">Pages</label>
-                <input type="text" name="pages" required>
+                <input type="text" id="pages" name="pages" required>
             </div>
             <div>
                 <fieldset>
                     <legend>Have read:</legend>
                     <div>
-                        <label for="no-radio">Yes</label>
-                        <input type="radio" name="read" value="Yes" required>
-                        <label for="yes-radio">No</label>
-                        <input type="radio" name="read" value="No" required>
+                        <label for="yes-radio">Yes</label>
+                        <input type="radio" name="read" id="yes-radio" value="Yes" required>
+                        <label for="no-radio">No</label>
+                        <input type="radio" name="read" id="no-radio" value="No" required>
                     </div>
                 </fieldset>
             </div>
