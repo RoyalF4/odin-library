@@ -3,19 +3,19 @@ const myLibrary = [
         title: 'The Lion, the Witch and the Wardrobe',
         author: 'C.S. Lewis',
         pages: 112,
-        isbn: '9781350275515'
+        read: 'no'
     },
     {
         title: 'Harry Potter',
         author: 'J.K. Rowling',
-        pages: 225,
-        isbn: '3423443243253'
+        pages: '225',
+        read: 'yes'
     },
     {
         title: 'book 3',
         author: 'Royal Finch',
-        pages: 69,
-        isbn: '343243252532'
+        pages: '69',
+        read: 'no'
     }
 ];
 
@@ -28,14 +28,10 @@ function Book(title, author, pages, isbn) {
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
+    addBookToTable(book);
 }
 
 const table = document.querySelector('tbody');
-
-// for(let i = 1; i <= myLibrary.length; i++) {
-//     const row = table.insertRow(-1);
-//     row.appendChild('td').textContent = 'test'
-// }
 
 for(obj of myLibrary) {
     const row = document.createElement('tr');
@@ -47,9 +43,38 @@ for(obj of myLibrary) {
     table.appendChild(row);
 }
 
+function addBookToTable(book) {
+    const row = document.createElement('tr');
+    for(const prop in book) {
+        const cell = document.createElement('td');
+        cell.textContent = book[prop];
+        row.appendChild(cell);
+    }
+    table.appendChild(row);
+}
 
-// const table = document.querySelector('tbody');
 
-//  const row = table.insertRow(1);
 
-//  row.insertCell(0).innerHTML='hello';
+const modal = document.querySelector('#modal');
+const openModal = document.querySelector('.open-modal');
+const closeModal = document.querySelector('#close-modal')
+const form = document.querySelector('form');
+
+openModal.addEventListener('click', () => {
+    form.reset();
+    modal.showModal();
+})
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const obj = Object.fromEntries(fd);
+    addBookToLibrary(obj);
+    modal.close();
+});
+
+
+// to-do
+// add radio button to read input
+
+
