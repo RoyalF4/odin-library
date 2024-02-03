@@ -74,13 +74,18 @@ function addBookToTable(myLibrary) {
             button.addEventListener('click', () => {
                 if(span.textContent == 'Yes') {
                     myLibrary[row.getAttribute('data-index')].read = 'No';
+                    cell.style.background = 'rgb(188, 188, 188)';
                     span.textContent = 'No';
                 }
                 else {
                     myLibrary[row.getAttribute('data-index')].read = 'Yes';
                     span.textContent = 'Yes';
+                    cell.style.background = '#83fc81';
                 }
             })
+            if(book[prop] == 'Yes') {
+                cell.style.background = '#83fc81';
+            }
             span.textContent = book[prop];
             row.appendChild(cell);
             cell.appendChild(span);
