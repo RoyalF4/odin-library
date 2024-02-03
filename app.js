@@ -73,9 +73,11 @@ function addBookToTable(myLibrary) {
             button.textContent = 'Toggle';
             button.addEventListener('click', () => {
                 if(span.textContent == 'Yes') {
+                    myLibrary[row.getAttribute('data-index')].read = 'No';
                     span.textContent = 'No';
                 }
                 else {
+                    myLibrary[row.getAttribute('data-index')].read = 'Yes';
                     span.textContent = 'Yes';
                 }
             })
